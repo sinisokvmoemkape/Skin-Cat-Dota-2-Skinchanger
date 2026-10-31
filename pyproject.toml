@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=75,<81", "wheel>=0.45,<1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skin-cat"
+version = "0.1.0"
+description = "Free cross-platform local cosmetic profile manager for Dota 2"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Skin Cat contributors" }]
+dependencies = [
+    "PySide6-Essentials==6.12.0",
+    "psutil==7.2.2",
+    "dbus-next==0.2.3; sys_platform == 'linux'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.2.0",
+    "ruff==0.14.10",
+]
+
+[project.scripts]
+skin-cat = "skin_studio.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+skin_studio = ["i18n/locale/**/*.qm", "ui/*.qss", "ui/*.svg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+

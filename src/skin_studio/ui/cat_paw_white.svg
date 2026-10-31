@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 424 374" width="848" height="748">
+  <defs>
+    <linearGradient id="paw-fur" x1="0" y1="-12" x2="0" y2="362" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4FA"/>
+      <stop offset="1" stop-color="#E9D9E3"/>
+    </linearGradient>
+  </defs>
+  <!-- outline layer -->
+  <g fill="#141418" stroke-linejoin="round">
+    <ellipse cx="150" cy="94" rx="73" ry="83"/>
+    <ellipse cx="246" cy="87" rx="73" ry="83"/>
+    <ellipse cx="73" cy="179" rx="73" ry="77"/>
+    <ellipse cx="323" cy="167" rx="73" ry="77"/>
+    <ellipse cx="204" cy="252" rx="146" ry="96"/>
+    <ellipse cx="200" cy="171" rx="115" ry="58"/>
+  </g>
+
+  <!-- white body -->
+  <g fill="url(#paw-fur)">
+    <ellipse cx="150" cy="94" rx="73" ry="83"/>
+    <ellipse cx="246" cy="87" rx="73" ry="83"/>
+    <ellipse cx="73" cy="179" rx="73" ry="77"/>
+    <ellipse cx="323" cy="167" rx="73" ry="77"/>
+    <ellipse cx="204" cy="252" rx="146" ry="96"/>
+    <ellipse cx="200" cy="171" rx="115" ry="58"/>
+  </g>
+
+  <!-- pink pads -->
+  <g fill="#e8579a" stroke-linejoin="round">
+    <ellipse cx="150" cy="98" rx="37" ry="44" transform="rotate(-8 150 98)"/>
+    <ellipse cx="246" cy="94" rx="37" ry="44" transform="rotate(8 246 94)"/>
+    <ellipse cx="79" cy="189" rx="35" ry="44" transform="rotate(-12 79 189)"/>
+    <ellipse cx="318" cy="169" rx="35" ry="44" transform="rotate(12 318 169)"/>
+    <path d="M202 162 C232 162 252 188 258 222 C262 240 290 244 296 270 C300 296 280 308 258 308 C240 308 232 322 204 322 C176 322 168 308 150 308 C128 308 108 296 112 270 C118 244 142 240 146 222 C152 188 172 162 202 162 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,240 @@
+QWidget {
+    background: #171719;
+    color: #f2f0f2;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 14px;
+}
+
+#waitingRoot {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #171619, stop:0.55 #1c191d, stop:1 #151416);
+}
+
+#waitingBrand {
+    background: transparent;
+    color: #fff7fc;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#waitingStatus {
+    background: transparent;
+    color: #f08bc1;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+#waitingDetail {
+    background: transparent;
+    color: #a9a2aa;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#waitingLogo {
+    background: transparent;
+}
+
+#settingsButton {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #bdb5bd;
+    font-size: 20px;
+    padding: 5px 9px;
+}
+
+#settingsButton:hover {
+    background: #242126;
+    border-color: #44313e;
+    color: #f08bc1;
+}
+
+#sidebar {
+    background: #111113;
+    border-right: 1px solid #2c292e;
+    min-width: 205px;
+    max-width: 205px;
+}
+
+#brand {
+    color: #f6eaf2;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 8px;
+}
+
+#navigationButton {
+    background: transparent;
+    border: 0;
+    border-radius: 7px;
+    color: #bab5bb;
+    padding: 11px 12px;
+    text-align: left;
+}
+
+#navigationButton:hover {
+    background: #242126;
+    color: #ffffff;
+}
+
+#navigationButton:checked, #primaryButton {
+    background: #d74f98;
+    color: #ffffff;
+}
+
+#offlineLabel, #muted {
+    color: #a9a2aa;
+}
+
+#offlineLabel {
+    border-top: 1px solid #302b31;
+    padding: 12px 8px;
+}
+
+#pageTitle {
+    color: #fff8fc;
+    font-size: 27px;
+    font-weight: 650;
+    margin-bottom: 4px;
+}
+
+#notice, #statusCard {
+    background: #211d22;
+    border: 1px solid #44313e;
+    border-radius: 9px;
+    padding: 16px;
+}
+
+QLineEdit, QComboBox, QListWidget {
+    background: #211f22;
+    border: 1px solid #3c373e;
+    border-radius: 7px;
+    padding: 9px 10px;
+    selection-background-color: #a83e75;
+}
+
+QLineEdit:focus, QComboBox:focus, QListWidget:focus {
+    border: 1px solid #e16bab;
+}
+
+QPushButton {
+    background: #2b282d;
+    border: 1px solid #403b43;
+    border-radius: 7px;
+    padding: 9px 13px;
+}
+
+QPushButton:hover {
+    background: #39323a;
+}
+
+#primaryButton {
+    border: 0;
+    font-weight: 600;
+}
+
+#dangerButton {
+    color: #ffb8c0;
+}
+
+#companionOverlay {
+    background: transparent;
+    border: 0;
+}
+
+#overlayPanel {
+    background: #171719;
+    border: 1px solid #d74f98;
+    border-radius: 14px;
+}
+
+#overlayCard {
+    background: #211d22;
+    border: 1px solid #39323a;
+    border-radius: 11px;
+}
+
+#overlayCardText {
+    color: #d3cbd3;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+QTabWidget::pane {
+    background: #19171a;
+    border: 1px solid #302b31;
+    border-radius: 9px;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #aaa2ab;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 10px 16px;
+}
+
+QTabBar::tab:selected {
+    color: #fff4fa;
+    border-bottom-color: #e16bab;
+}
+
+QTabBar::tab:hover:!selected {
+    color: #eac5d9;
+    background: #211d22;
+}
+
+#overlayLauncher {
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    padding: 0;
+    border: 1px solid rgba(243, 139, 192, 220);
+    border-radius: 22px;
+    background: rgba(215, 79, 152, 224);
+}
+
+#overlayLauncher:hover {
+    background: rgba(232, 102, 169, 242);
+}
+
+#overlayCollapseButton {
+    min-width: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    padding: 0;
+    font-size: 22px;
+}
+
+#statsEmptyState {
+    color: #f4e8f0;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+#overlaySectionTitle {
+    color: #f6eaf2;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QPushButton:focus, QListWidget::item:focus {
+    outline: 2px solid #e16bab;
+}
+
+QListWidget::item {
+    padding: 9px;
+    border-radius: 5px;
+}
+
+QListWidget::item:selected {
+    background: #3b2935;
+    color: #f5eef3;
+}
