@@ -270,5 +270,38 @@ Restoring replaces the current Skin Cat database.</translation></message>
     <message><source>The backup operation failed.</source><translation>The backup operation failed.</translation></message>
     <message><source>Back up or restore application data</source><translation>Back up or restore application data</translation></message>
     <message><source>Toggle overlay: {shortcut}</source><translation>Toggle overlay: {shortcut}</translation></message>
+    <message><source>Local VPK mods</source><translation>Local VPK mods</translation></message>
+    <message><source>Choose a VPK you downloaded yourself and explicitly select the game VPK to replace. Skin Cat does not download or redistribute mods. The game file is backed up outside Dota 2 before replacement. Game rules and VAC compatibility are not confirmed.</source><translation>Choose a VPK you downloaded yourself and explicitly select the game VPK to replace. Skin Cat does not download or redistribute mods. The game file is backed up outside Dota 2 before replacement. Game rules and VAC compatibility are not confirmed.</translation></message>
+    <message><source>Dota 2 folder</source><translation>Dota 2 folder</translation></message>
+    <message><source>Choose Dota 2 folder…</source><translation>Choose Dota 2 folder…</translation></message>
+    <message><source>Downloaded mod VPK</source><translation>Downloaded mod VPK</translation></message>
+    <message><source>Choose mod VPK…</source><translation>Choose mod VPK…</translation></message>
+    <message><source>Game VPK to replace</source><translation>Game VPK to replace</translation></message>
+    <message><source>Choose target VPK…</source><translation>Choose target VPK…</translation></message>
+    <message><source>Back up and replace selected VPK</source><translation>Back up and replace selected VPK</translation></message>
+    <message><source>Available VPK backups</source><translation>Available VPK backups</translation></message>
+    <message><source>Restore selected backup</source><translation>Restore selected backup</translation></message>
+    <message><source>Choose Dota 2 folder</source><translation>Choose Dota 2 folder</translation></message>
+    <message><source>Choose downloaded mod VPK</source><translation>Choose downloaded mod VPK</translation></message>
+    <message><source>VPK files (*.vpk)</source><translation>VPK files (*.vpk)</translation></message>
+    <message><source>Dota 2 folder required</source><translation>Dota 2 folder required</translation></message>
+    <message><source>Choose Dota 2 folder first.</source><translation>Choose Dota 2 folder first.</translation></message>
+    <message><source>Choose game VPK to replace</source><translation>Choose game VPK to replace</translation></message>
+    <message><source>VPK files required</source><translation>VPK files required</translation></message>
+    <message><source>Choose both the downloaded mod and target VPK.</source><translation>Choose both the downloaded mod and target VPK.</translation></message>
+    <message><source>Confirm VPK replacement</source><translation>Confirm VPK replacement</translation></message>
+    <message><source>Replace {target} with {source}? A backup will be created outside the game folder. This may affect game integrity and is not confirmed as safe for online play or VAC.</source><translation>Replace {target} with {source}? A backup will be created outside the game folder. This may affect game integrity and is not confirmed as safe for online play or VAC.</translation></message>
+    <message><source>VPK replacement failed</source><translation>VPK replacement failed</translation></message>
+    <message><source>VPK replaced. Original backup: {path}</source><translation>VPK replaced. Original backup: {path}</translation></message>
+    <message><source>Confirm VPK restore</source><translation>Confirm VPK restore</translation></message>
+    <message><source>Restore the original game VPK for {path}?</source><translation>Restore the original game VPK for {path}?</translation></message>
+    <message><source>VPK restore failed</source><translation>VPK restore failed</translation></message>
+    <message><source>Original VPK restored: {path}</source><translation>Original VPK restored: {path}</translation></message>
+    <message><source>Close Dota 2 first</source><translation>Close Dota 2 first</translation></message>
+    <message><source>Close Dota 2 before replacing game files.</source><translation>Close Dota 2 before replacing game files.</translation></message>
+    <message><source>Close Dota 2 before restoring game files.</source><translation>Close Dota 2 before restoring game files.</translation></message>
+    <message><source>Applying VPK and creating a backup…</source><translation>Applying VPK and creating a backup…</translation></message>
+    <message><source>Restoring the original VPK…</source><translation>Restoring the original VPK…</translation></message>
+    <message><source>Wait for the VPK operation to finish before closing.</source><translation>Wait for the VPK operation to finish before closing.</translation></message>
   </context>
 </TS>

@@ -27,6 +27,17 @@ def test_both_translation_catalogs_load(qapp) -> None:
         assert translator.translate("App", "Back up or restore application data")
         assert translator.translate("App", "Apply shortcut")
         assert translator.translate("App", "Toggle overlay: {shortcut}")
+        assert translator.translate("App", "Local VPK mods")
+        assert translator.translate("App", "Back up and replace selected VPK")
+        assert translator.translate("App", "Restore selected backup")
+        assert translator.translate("App", "Applying VPK and creating a backup…")
+        assert translator.translate("App", "Restoring the original VPK…")
+        assert translator.translate("App", "Close Dota 2 before restoring game files.")
+        assert translator.translate(
+            "App",
+            "Replace {target} with {source}? A backup will be created outside the game folder. "
+            "This may affect game integrity and is not confirmed as safe for online play or VAC.",
+        )
 
 
 def test_russian_catalog_contains_critical_ui_messages(qapp) -> None:
@@ -53,5 +64,12 @@ def test_russian_catalog_contains_critical_ui_messages(qapp) -> None:
         assert qapp.translate(
             "App", "Back up or restore application data"
         ) == "Резервное копирование и восстановление данных"
+        assert qapp.translate("App", "Local VPK mods") == "Локальные VPK-моды"
+        assert qapp.translate("App", "Back up and replace selected VPK") == (
+            "Сохранить копию и заменить VPK"
+        )
+        assert qapp.translate("App", "Restore selected backup") == (
+            "Восстановить выбранную копию"
+        )
     finally:
         qapp.removeTranslator(translator)

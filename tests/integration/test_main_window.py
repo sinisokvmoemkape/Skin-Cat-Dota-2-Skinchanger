@@ -194,6 +194,7 @@ def test_settings_can_open_desktop_shortcut_configuration(qapp, tmp_path: Path) 
     )
     calls: list[bool] = []
     backup_calls: list[bool] = []
+    vpk_calls: list[bool] = []
     page = SettingsPage(
         paths,
         Settings(language="en"),
@@ -202,6 +203,7 @@ def test_settings_can_open_desktop_shortcut_configuration(qapp, tmp_path: Path) 
         on_configure_shortcut=lambda: calls.append(True),
         on_shortcut_changed=lambda shortcut: calls.append(shortcut),
         on_manage_backup_restore=lambda: backup_calls.append(True),
+        on_manage_vpk_mods=lambda: vpk_calls.append(True),
         shortcut_status="Global shortcut is ready. Default: Ctrl+Shift+O.",
     )
     assert not page.shortcut_button.isHidden()
@@ -214,6 +216,8 @@ def test_settings_can_open_desktop_shortcut_configuration(qapp, tmp_path: Path) 
     assert calls == ["Ctrl+Alt+K", True]
     page.backup_button.click()
     assert backup_calls == [True]
+    page.vpk_button.click()
+    assert vpk_calls == [True]
     page.set_shortcut_status("Portal permission required.")
     assert page.shortcut_status.text() == "Portal permission required."
 

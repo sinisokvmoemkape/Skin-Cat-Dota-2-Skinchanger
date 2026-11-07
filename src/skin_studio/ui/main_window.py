@@ -52,6 +52,7 @@ from skin_studio.storage.repositories.cosmetics import CosmeticRepository
 from skin_studio.ui.widgets.companion_overlay import CompanionOverlayWindow
 from skin_studio.ui.widgets.database_backup_dialog import DatabaseBackupDialog
 from skin_studio.ui.widgets.player_stats_dialog import PlayerStatsDialog
+from skin_studio.ui.widgets.vpk_mod_dialog import VpkModDialog
 
 
 def tr(source: str) -> str:
@@ -339,6 +340,7 @@ class MainWindow(QMainWindow):
                 self._change_global_shortcut if self._global_shortcut_service is not None else None
             ),
             on_manage_backup_restore=self._manage_database_backup,
+            on_manage_vpk_mods=self._manage_vpk_mods,
             shortcut_status=self._shortcut_status,
         )
         buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)
@@ -363,6 +365,18 @@ class MainWindow(QMainWindow):
         if self._overlay_window is not None:
             self._overlay_window.catalog_page.refresh_items()
             self._overlay_window.refresh_selection()
+
+    def _manage_vpk_mods(self) -> None:
+        installs = discover_steam(self._settings.steam_path)
+        initial_game_root = installs[0].game_path if len(installs) == 1 else None
+        dialog = VpkModDialog(
+            self,
+            backup_root=self._paths.data_dir / "vpk-backups",
+            is_game_running=self._game_presence_service.is_dota_running,
+            initial_game_root=initial_game_root,
+        )
+        dialog.setStyleSheet((Path(__file__).parent / "styles.qss").read_text(encoding="utf-8"))
+        dialog.exec()
 
     def _persist_settings(self) -> None:
         try:
@@ -546,6 +560,7 @@ class SettingsPage(QWidget):
         on_configure_shortcut: Callable[[], None] | None = None,
         on_shortcut_changed: Callable[[str], None] | None = None,
         on_manage_backup_restore: Callable[[], None] | None = None,
+        on_manage_vpk_mods: Callable[[], None] | None = None,
         shortcut_status: str = "",
     ) -> None:
         super().__init__()
@@ -556,6 +571,7 @@ class SettingsPage(QWidget):
         self._on_configure_shortcut = on_configure_shortcut
         self._on_shortcut_changed = on_shortcut_changed
         self._on_manage_backup_restore = on_manage_backup_restore
+        self._on_manage_vpk_mods = on_manage_vpk_mods
         layout = QVBoxLayout(self)
         layout.setContentsMargins(42, 38, 42, 32)
         self.title = QLabel()
@@ -591,6 +607,8 @@ class SettingsPage(QWidget):
         self.shortcut_button.clicked.connect(self._configure_shortcut)
         self.backup_button = QPushButton()
         self.backup_button.clicked.connect(self._manage_backup_restore)
+        self.vpk_button = QPushButton()
+        self.vpk_button.clicked.connect(self._manage_vpk_mods)
         layout.addWidget(self.title)
         layout.addSpacing(20)
         layout.addWidget(self.language_label)
@@ -610,6 +628,7 @@ class SettingsPage(QWidget):
         layout.addSpacing(12)
         layout.addWidget(self.data_location)
         layout.addWidget(self.backup_button, 0, Qt.AlignmentFlag.AlignLeft)
+        layout.addWidget(self.vpk_button, 0, Qt.AlignmentFlag.AlignLeft)
         layout.addStretch(1)
         self.retranslate()
         self._set_language_selection(settings.language or system_language())
@@ -628,6 +647,10 @@ class SettingsPage(QWidget):
     def _manage_backup_restore(self) -> None:
         if self._on_manage_backup_restore is not None:
             self._on_manage_backup_restore()
+
+    def _manage_vpk_mods(self) -> None:
+        if self._on_manage_vpk_mods is not None:
+            self._on_manage_vpk_mods()
 
     def _apply_shortcut(self) -> None:
         shortcut = self.shortcut_edit.keySequence().toString(
@@ -678,6 +701,7 @@ class SettingsPage(QWidget):
         self.shortcut_apply_button.setText(tr("Apply shortcut"))
         self.shortcut_button.setText(tr("Configure shortcut"))
         self.backup_button.setText(tr("Back up or restore application data"))
+        self.vpk_button.setText(tr("Manage local VPK mods"))
         self.shortcut_edit.setToolTip(tr("Choose a modifier and a single key."))
         shortcut_available = (
             self._on_configure_shortcut is not None or self._on_shortcut_changed is not None
